@@ -10,3 +10,4 @@ with open('Collins Scrabble Words (2019).txt','r') as f:
 with open('five_letter_words.txt','w') as f:
     for word in words:
         f.write(f"{word}")
+#to store all 5 letter words
