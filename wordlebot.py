@@ -13,7 +13,7 @@ guess=guess.lower()
 for _ in range(6):
     inp=input("Match: ")
     if(inp=="ggggg"):
-        print("Congrats\nThank you for using wordle-bot!")
+        print(f"Congrats you did it in {_ + 1} guesses\nThank you for using wordle-bot!")
         break
     while len(inp)!=5:
         print("Incorrect Match, try again")
@@ -60,9 +60,9 @@ for _ in range(6):
         freqtuple.append((word,score))
     freqtuple=sorted(freqtuple,key=lambda x: x[1])
     print(len(freqtuple), " words left")
-    if(len(freqtuple)>6):
+    if(len(freqtuple)>8):
         print("BEST CHOICES: ")
-        for k in range(len(freqtuple) - 1, len(freqtuple) - 6,-1):
+        for k in range(3*len(freqtuple)//4 -  2, 3*len(freqtuple)//4 +3):
             print(freqtuple[k][0],end=" ")
         print()
     else:
